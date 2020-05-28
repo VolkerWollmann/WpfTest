@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:WpfTest"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBox Name ="tboOutput1">
+        </TextBox>
+        <TextBox Name ="tboOutput2" Text="{Binding Path=Output}">
+        </TextBox>
+        <TextBlock Name="tblOutput" >
+            <TextBlock.Text >
+                <Binding Path="Output" />
+            </TextBlock.Text>
+        </TextBlock>
+        <Button Name="BtnTest" Click="BtnTest_Click" >Test</Button>
+    </StackPanel>
 </Window>
