@@ -16,6 +16,29 @@
                 <Binding Path="Output" />
             </TextBlock.Text>
         </TextBlock>
-        <Button Name="BtnTest" Click="BtnTest_Click" >Test</Button>
+        <Button Name="BtnTest" Click="BtnTest_Click" >
+            Test
+            <Button.ContextMenu>
+                <ContextMenu Name="cm" StaysOpen="true">
+                    <MenuItem Header="H1"/>
+                    <MenuItem Header="H2"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Border BorderThickness="2,2,2,2" BorderBrush="Black">
+            <StackPanel Name="StackPanel" Height="50" >
+                <StackPanel.ContextMenu>
+                    <ContextMenu Name="cm2" StaysOpen="true">
+                        <MenuItem Header="H1"/>
+                        <MenuItem Header="H2"/>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+                <TextBlock Background="Azure" Height="50">
+                    <TextBlock.Text>
+                        Rechteck
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+        </Border>
     </StackPanel>
 </Window>
