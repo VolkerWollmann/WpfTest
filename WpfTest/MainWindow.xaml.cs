@@ -21,10 +21,19 @@ namespace WpfTest
 	/// </summary>
 	public partial class MainWindow : Window, INotifyPropertyChanged
 	{
+		public ICommand MyCommand 
+		{  
+			get 
+			{ 
+				return new TestCommand();  
+			} 
+		}
 		public MainWindow()
 		{
 			InitializeComponent();
+
 			this.DataContext = this;
+			//MyCommand = new TestCommand();
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
