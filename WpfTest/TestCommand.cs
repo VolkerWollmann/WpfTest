@@ -7,8 +7,14 @@ using System.Windows.Input;
 
 namespace WpfTest
 {
+
+	/// <summary>
+	/// Binding command
+	/// https://www.youtube.com/watch?v=fOookEq5od0
+	/// </summary>
 	class TestCommand : ICommand
 	{
+		MainWindow Mw;
 		public event EventHandler CanExecuteChanged;
 
 		public bool CanExecute(object parameter)
@@ -18,12 +24,12 @@ namespace WpfTest
 
 		public void Execute(object parameter)
 		{
-			;
+			Mw.StackPanelWithCommand.Focus();
 		}
 
-		public TestCommand()
+		public TestCommand(MainWindow mw)
 		{
-			;
+			Mw = mw;
 		}
 	}
 }

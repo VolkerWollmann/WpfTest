@@ -8,10 +8,16 @@
         Title="MainWindow" Height="450" Width="800"
         d:DataContext="{d:DesignInstance local:MainWindow}">
 
+    <Window.InputBindings>
+        <KeyBinding Key="F5" Command="{Binding MyCommand, Mode=OneWay}" />
+    </Window.InputBindings>
     <StackPanel>
         <TextBox Name ="tboOutput1">
         </TextBox>
         <TextBox Name ="tboOutput2" Text="{Binding Path=Output}">
+            <TextBox.InputBindings>
+                <KeyBinding Key="F6" Command="{Binding MyCommand, Mode=OneWay}" />
+            </TextBox.InputBindings>
         </TextBox>
         <TextBlock Name="tblOutput" >
             <TextBlock.Text >
@@ -28,14 +34,14 @@
             </Button.ContextMenu>
         </Button>
         <Border BorderThickness="2,2,2,2" BorderBrush="Black">
-            <StackPanel Name="StackPanel" Height="50" >
+            <StackPanel Name="StackPanelWithCommand" Height="50" >
                 <StackPanel.ContextMenu>
                     <ContextMenu Name="cm2">
                         <MenuItem Header="H3" Command="{Binding MyCommand, Mode=OneWay}"/>
                         <MenuItem Header="H4"/>
                     </ContextMenu>
                 </StackPanel.ContextMenu>
-                <TextBlock Background="Azure" Height="50">
+                <TextBlock Name="StackPanelTextBlock" Background="Azure" Height="50">
                     <TextBlock.Text>
                         Rechteck
                     </TextBlock.Text>

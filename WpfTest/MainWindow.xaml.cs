@@ -25,7 +25,7 @@ namespace WpfTest
 		{  
 			get 
 			{ 
-				return new TestCommand();  
+				return new TestCommand(this);  
 			} 
 		}
 		public MainWindow()
@@ -33,7 +33,8 @@ namespace WpfTest
 			InitializeComponent();
 
 			this.DataContext = this;
-			//MyCommand = new TestCommand();
+
+			StackPanelWithCommand.Focus();
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
