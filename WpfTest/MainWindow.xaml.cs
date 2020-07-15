@@ -34,7 +34,7 @@ namespace WpfTest
 
 			this.DataContext = this;
 
-			StackPanelWithCommand.Focus();
+			//StackPanelWithCommand.IsEnabled = true;
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

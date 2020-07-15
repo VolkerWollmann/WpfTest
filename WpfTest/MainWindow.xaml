@@ -28,13 +28,16 @@
             Test
             <Button.ContextMenu>
                 <ContextMenu Name="cm" >
-                    <MenuItem Header="H1" Command="{Binding MyCommand}"/>
+                    <MenuItem Header="H1" Command="{Binding MyCommand, Mode=OneWay}"/>
                     <MenuItem Header="H2"/>
                 </ContextMenu>
             </Button.ContextMenu>
         </Button>
         <Border BorderThickness="2,2,2,2" BorderBrush="Black">
-            <StackPanel Name="StackPanelWithCommand" Height="50" >
+            <StackPanel Name="StackPanelWithCommand" Height="100" >
+                <StackPanel.InputBindings>
+                    <KeyBinding Key="F8" Command="{Binding MyCommand, Mode=OneWay}" />
+                </StackPanel.InputBindings>
                 <StackPanel.ContextMenu>
                     <ContextMenu Name="cm2">
                         <MenuItem Header="H3" Command="{Binding MyCommand, Mode=OneWay}"/>
@@ -46,6 +49,11 @@
                         Rechteck
                     </TextBlock.Text>
                 </TextBlock>
+                <TextBox Name ="StackPanelTextBox" Background="Aqua" Height="50">
+                    <!--<TextBox.InputBindings>
+                        <KeyBinding Key="F7" Command="{Binding MyCommand, Mode=OneWay}" />
+                    </TextBox.InputBindings>-->
+                </TextBox>
             </StackPanel>
         </Border>
     </StackPanel>
