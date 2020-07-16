@@ -35,6 +35,8 @@ namespace WpfTest
 			this.DataContext = this;
 
 			//StackPanelWithCommand.IsEnabled = true;
+			KeyBinding keyBinding = new KeyBinding(MyCommand, Key.F9, ModifierKeys.None); 
+			StackPanelWithCommand.InputBindings.Add(keyBinding);
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
